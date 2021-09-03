@@ -1,5 +1,9 @@
+import 'AdminScreen/admin_login_screen.dart';
+import 'package:app/AdminScreen/admin_screen.dart';
+import 'package:app/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'GuestScreen/guestscreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,14 +14,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: 'guestscreen',
+      initialRoute: '/welcome_screen',
       title: 'Flutter Demo',
-      routes: {
-        'guestscreen': (context) => GuestScreen(title: 'İzmir Amerikan Koleji')
+      routes: <String, WidgetBuilder>{
+        '/welcome_screen': (BuildContext context) => WelcomeScreen(),
+        '/guest_screen': (BuildContext context) =>
+            GuestScreen(title: 'İzmir Amerikan Koleji'),
+        '/admin_login_screen/admin_screen': (BuildContext context) =>
+            AdminScreen(
+              title: 'İzmir Amerikan Koleji',
+            ),
+        '/admin_login_screen': (BuildContext context) =>
+            AdminLoginScreen(title: 'İzmir Amerikan Koleji')
       },
       theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
+          primarySwatch: Colors.orange,
+          textTheme:
+              GoogleFonts.ibmPlexMonoTextTheme(Theme.of(context).textTheme)),
       home: MyHomePage(title: 'Tahliye Sistemi'),
     );
   }

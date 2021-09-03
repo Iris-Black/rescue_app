@@ -6,6 +6,13 @@ import 'dart:convert';
 
 initstate() {}
 
+testFunction() {
+  print("working");
+}
+
+String duyuru =
+    "Deprem oluyor. Lütfen sakin kalın ve haritada gösterilen en yakın çıkışa gidin.";
+
 class GuestScreen extends StatefulWidget {
   GuestScreen({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -60,11 +67,11 @@ class _GuestScreenState extends State<GuestScreen> {
           title: Center(
             child: Text(
               widget.title,
-              style: TextStyle(),
             ),
           ),
         ),
         body: Container(
+          color: Color(0xff1d1d1d),
           //background color
           child: Center(
             child: Column(
@@ -73,7 +80,15 @@ class _GuestScreenState extends State<GuestScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 10),
                   child: ToggleButtons(
+                    borderRadius: BorderRadius.circular(4.0),
+                    borderWidth: 2,
+                    borderColor: Colors.orange,
+                    selectedBorderColor: Colors.orange,
+                    selectedColor: Colors.orange.withOpacity(1),
                     isSelected: isSelected,
+                    fillColor: Colors.orangeAccent.withOpacity(0.5),
+                    splashColor: Colors.orangeAccent.withOpacity(0.4),
+                    hoverColor: Colors.orangeAccent.withOpacity(0.04),
                     children: [
                       createListButtonItem('1'),
                       createListButtonItem('2'),
@@ -100,8 +115,8 @@ class _GuestScreenState extends State<GuestScreen> {
                   height: 240,
                   decoration: BoxDecoration(
                       border: Border.all(
-                        color: Colors.black,
-                        width: 8,
+                        color: Color(0xffb96300),
+                        width: 4,
                       ),
                       image: DecorationImage(
                         image: NetworkImage(planURLs[current_page]),
@@ -111,6 +126,91 @@ class _GuestScreenState extends State<GuestScreen> {
                   padding: EdgeInsets.only(top: 10),
                   margin: const EdgeInsets.all(10),
                   //child: displayImage(planURLs[current_page]),
+                ),
+                Container(
+                  height: 150,
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.orange,
+                      border: Border.all(color: Color(0xffb96300), width: 8),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        duyuru,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 5, right: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: ElevatedButton(
+                                  onPressed: testFunction(),
+                                  child: Text(
+                                    'Güvendeyim.',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(0.2),
+                                    backgroundColor: MaterialStateProperty
+                                        .resolveWith<Color>(
+                                      (Set<MaterialState> states) {
+                                        if (states
+                                            .contains(MaterialState.pressed))
+                                          return Colors.green;
+                                        return Color(
+                                            0xffff9b00); // Use the component's default.
+                                      },
+                                    ),
+                                  ),
+                                )),
+                            SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: ElevatedButton(
+                                  onPressed: testFunction(),
+                                  child: Text(
+                                    'Tahliye edilmeyi bekliyorum.',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(0.2),
+                                    backgroundColor: MaterialStateProperty
+                                        .resolveWith<Color>(
+                                      (Set<MaterialState> states) {
+                                        if (states
+                                            .contains(MaterialState.pressed))
+                                          return Colors.green;
+                                        return Color(
+                                            0xffba2e00); // Use the component's default.
+                                      },
+                                    ),
+                                  ),
+                                )),
+                          ]),
+                    ],
+                  ),
                 ),
               ],
             ),
