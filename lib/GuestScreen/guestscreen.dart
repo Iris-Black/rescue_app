@@ -19,8 +19,9 @@ class _GuestScreenState extends State<GuestScreen> {
 
   List planURLs = [
     'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hdnicewallpapers.com%2FWalls%2FBig%2FCat%2FFree_Download_Image_of_Cat.jpg&f=1&nofb=1',
-    'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.hdwallpaper.nu%2Fwp-content%2Fuploads%2F2015%2F02%2FFunny-Cat-Hidden-1024x768.jpg&f=1&nofb=1',
-    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hdnicewallpapers.com%2FWalls%2FBig%2FCat%2FAnimal_Cat_Roaring_Image.jpg&f=1&nofb=1'
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpaperscraft.com%2Fimage%2Fcat_kitten_glance_177552_1600x900.jpg&f=1&nofb=1',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hdnicewallpapers.com%2FWalls%2FBig%2FCat%2FAnimal_Cat_Roaring_Image.jpg&f=1&nofb=1',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpaperscraft.com%2Fimage%2Fcat_cute_pet_163065_2560x1440.jpg&f=1&nofb=1'
   ];
 
   int floor = 0;
@@ -43,7 +44,7 @@ class _GuestScreenState extends State<GuestScreen> {
     return Image.network(url);
   }
 
-  final isSelected = <bool>[true, false, false];
+  final isSelected = <bool>[true, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +57,11 @@ class _GuestScreenState extends State<GuestScreen> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text(
-            widget.title,
-            style: TextStyle(),
+          title: Center(
+            child: Text(
+              widget.title,
+              style: TextStyle(),
+            ),
           ),
         ),
         body: Container(
@@ -68,13 +71,14 @@ class _GuestScreenState extends State<GuestScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.only(top: 10),
+                  margin: EdgeInsets.only(top: 10),
                   child: ToggleButtons(
                     isSelected: isSelected,
                     children: [
                       createListButtonItem('1'),
                       createListButtonItem('2'),
-                      createListButtonItem('3')
+                      createListButtonItem('3'),
+                      createListButtonItem('4')
                     ],
                     onPressed: (int index) {
                       setState(() {
@@ -93,7 +97,20 @@ class _GuestScreenState extends State<GuestScreen> {
                   ),
                 ),
                 Container(
-                  child: displayImage(planURLs[current_page]),
+                  height: 240,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 8,
+                      ),
+                      image: DecorationImage(
+                        image: NetworkImage(planURLs[current_page]),
+                        fit: BoxFit.fitHeight,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  padding: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.all(10),
+                  //child: displayImage(planURLs[current_page]),
                 ),
               ],
             ),
