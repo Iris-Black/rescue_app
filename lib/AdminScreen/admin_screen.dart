@@ -19,7 +19,12 @@ class _AdminScreenState extends State<AdminScreen> {
             color: Colors.pink,
             width: 100,
             height: 100,
-          )
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/admin_screen_overview');
+              },
+              child: Text('Log in'))
         ],
       ),
     );

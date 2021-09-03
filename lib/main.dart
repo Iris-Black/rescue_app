@@ -1,4 +1,4 @@
-import 'AdminScreen/admin_login_screen.dart';
+import 'AdminScreen/admin_screen_overview.dart';
 import 'package:app/AdminScreen/admin_screen.dart';
 import 'package:app/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,12 +20,11 @@ class MyApp extends StatelessWidget {
         '/welcome_screen': (BuildContext context) => WelcomeScreen(),
         '/guest_screen': (BuildContext context) =>
             GuestScreen(title: 'İzmir Amerikan Koleji'),
-        '/admin_login_screen/admin_screen': (BuildContext context) =>
-            AdminScreen(
+        '/admin_screen': (BuildContext context) => AdminScreen(
               title: 'İzmir Amerikan Koleji',
             ),
-        '/admin_login_screen': (BuildContext context) =>
-            AdminLoginScreen(title: 'İzmir Amerikan Koleji')
+        '/admin_screen/admin_screen_overview': (BuildContext context) =>
+            AdminOverviewScreen(title: 'title')
       },
       theme: ThemeData(
           primarySwatch: Colors.orange,

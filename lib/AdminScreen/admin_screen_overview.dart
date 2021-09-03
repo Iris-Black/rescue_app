@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AdminLoginScreen extends StatefulWidget {
-  AdminLoginScreen({Key? key, required this.title}) : super(key: key);
+class AdminOverviewScreen extends StatefulWidget {
+  AdminOverviewScreen({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  _AdminLoginScreenState createState() => _AdminLoginScreenState();
+  _AdminOverviewScreenState createState() => _AdminOverviewScreenState();
 }
 
-class _AdminLoginScreenState extends State<AdminLoginScreen> {
+class _AdminOverviewScreenState extends State<AdminOverviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

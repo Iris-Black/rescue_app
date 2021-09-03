@@ -16,9 +16,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 250,
-          height: 250,
-          color: Colors.pink,
+          width: 256,
+          height: 256,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage('https://i.ibb.co/6bj4R4G/bitmap.png'),
+                fit: BoxFit.fitHeight),
+          ),
         ),
         ElevatedButton(
             onPressed: () {
@@ -27,7 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Text("Enter as Guest")),
         ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/admin_login_screen');
+              Navigator.pushNamed(context, '/admin_screen');
             },
             child: Text("Login as Admin")),
         ElevatedButton(
