@@ -38,7 +38,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             onPressed: () {
               Navigator.pushNamed(context, '/guest_screen');
             },
-            child: Text("Sign up to be an Admin"))
+            child: Text("Sign up to be an Admin")),
+        Container(
+          height: 200,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Container(
+            margin: EdgeInsets.all(10),
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/tablet_screen');
+                },
+                child: Text("Tablet modu")),
+          ),
+        ]),
       ],
     );
   }

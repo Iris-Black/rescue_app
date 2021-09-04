@@ -4,6 +4,7 @@ import 'package:app/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'GuestScreen/guestscreen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'TabletScreen/tablet_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
               title: 'İzmir Amerikan Koleji',
             ),
         '/admin_screen/admin_screen_overview': (BuildContext context) =>
-            AdminOverviewScreen(title: 'title')
+            AdminOverviewScreen(title: 'title'),
+        '/tablet_screen': (BuildContext context) => TabletScreen()
       },
       theme: ThemeData(
           primarySwatch: Colors.orange,
