@@ -20,11 +20,6 @@ class _AdminOverviewScreenState extends State<AdminOverviewScreen> {
             width: 100,
             height: 100,
           ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/admin_screen');
-              },
-              child: Text('Log in'))
         ],
       ),
     );

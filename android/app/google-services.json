@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "633230405479",
+    "project_id": "deprem-tahliye",
+    "storage_bucket": "deprem-tahliye.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633230405479:android:a968b040dc4e57415b89c2",
+        "android_client_info": {
+          "package_name": "com.acisolution.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633230405479-v0hu77f8u8elkdpuvabomv3ph2sv46ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXmEgkeslBmDB6vaad06MLOSjFyFvXaS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633230405479-v0hu77f8u8elkdpuvabomv3ph2sv46ps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633230405479:android:3744733b2a62271c5b89c2",
+        "android_client_info": {
+          "package_name": "com.tahliye.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633230405479-v0hu77f8u8elkdpuvabomv3ph2sv46ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXmEgkeslBmDB6vaad06MLOSjFyFvXaS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633230405479-v0hu77f8u8elkdpuvabomv3ph2sv46ps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
