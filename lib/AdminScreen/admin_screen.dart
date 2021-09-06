@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AdminScreen extends StatefulWidget {
   AdminScreen({Key? key, required this.title}) : super(key: key);
@@ -44,8 +45,7 @@ class _AdminScreenState extends State<AdminScreen> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(
-                      context, '/admin_screen/admin_screen_overview');
+                  SignIn();
                 },
                 child: Text('Log in'))
           ],
@@ -53,8 +53,19 @@ class _AdminScreenState extends State<AdminScreen> {
       ),
     );
   }
-  void SignIn(){
-    final _form = _formey
+
+  Future<void> SignIn() async {
+    final _formState = _formkey.currentState;
+    if (_formState!.validate()) {
+      _formState.save();
+      try {
+        UserCredential user = await FirebaseAuth.instance
+            .signInWithEmailAndPassword(email: _email, password: _password);
+        Navigator.pushNamed(context, '/admin_screen/admin_screen_overview');
+      } catch (e) {
+        print(e);
+      }
+    }
     //TODO: validate and login
   }
 }

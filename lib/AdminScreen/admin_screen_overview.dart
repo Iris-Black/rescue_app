@@ -12,15 +12,17 @@ class _AdminOverviewScreenState extends State<AdminOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.pink,
-            width: 100,
-            height: 100,
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              color: Colors.pink,
+              width: 100,
+              height: 100,
+            ),
+          ],
+        ),
       ),
     );
   }
